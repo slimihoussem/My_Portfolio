@@ -9082,7 +9082,7 @@ h1, h2, h3, h4, h5,
 /* Hide About section photo on mobile */
 @media (max-width: 991.98px) {
   .ftco-about .img-about {
-    display: none;
+    display: none !important;
   }
 }
 
