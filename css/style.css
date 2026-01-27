@@ -8763,12 +8763,42 @@ h1, h2, h3, h4, h5,
 .ftco-about .img-about {
   width: 100%;
   z-index: 0;
-  position: relative; }
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 10px; }
   .ftco-about .img-about .img {
     display: block;
     width: 100%;
-    position: relative;
-    z-index: 1; }
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+/* Mobile responsive about image */
+@media (max-width: 991.98px) {
+  .ftco-about .img-about {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ftco-about .img-about {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ftco-about .img-about {
+    min-height: 250px;
+  }
+}
 
 .ftco-about ul.about-info {
   display: inline-block;
@@ -8939,7 +8969,13 @@ h1, h2, h3, h4, h5,
   height: 285px;
   margin-bottom: 30px;
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; }
+  .project:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
   .project.img-2 {
     height: 600px; }
     @media (max-width: 767.98px) {
@@ -8979,7 +9015,7 @@ h1, h2, h3, h4, h5,
     transition: all 0.3s ease; }
     @media (max-width: 767.98px) {
       .project .overlay {
-        opacity: .2; } }
+        opacity: .3; } }
   .project .text {
     max-width: 80%;
     z-index: 1;
@@ -8990,7 +9026,9 @@ h1, h2, h3, h4, h5,
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .project .text h3 {
-      font-size: 20px; }
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 10px; }
       .project .text h3 a {
         color: #fff; }
     .project .text span {
@@ -8999,15 +9037,156 @@ h1, h2, h3, h4, h5,
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: 600; }
-    @media (max-width: 767.98px) {
+    @media (max-width: 991.98px) {
       .project .text {
         opacity: 1; }
-        .project .text span {
-          color: rgba(255, 255, 255, 0.8); } }
+      .project .text h3 {
+        font-size: 16px;
+        line-height: 1.3; }
+        .project .text h3 a {
+          color: #fff; }
+      .project .text span {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px; } }
+    @media (max-width: 767.98px) {
+      .project .text {
+        opacity: 1;
+        padding: 15px !important; }
+      .project .text h3 {
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: 8px; }
+        .project .text h3 a {
+          color: #fff; }
+      .project .text span {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 10px;
+        letter-spacing: 1px; } }
+    @media (max-width: 576px) {
+      .project {
+        height: 220px; }
+      .project .text {
+        padding: 12px !important; }
+      .project .text h3 {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-bottom: 6px; }
+      .project .text span {
+        font-size: 9px;
+        letter-spacing: 0.5px; } }
   .project:hover .overlay, .project:focus .overlay {
     opacity: .9; }
   .project:hover .text, .project:focus .text {
     opacity: 1; }
+
+/* Hide About section photo on mobile */
+@media (max-width: 991.98px) {
+  .ftco-about .img-about {
+    display: none;
+  }
+}
+
+/* Experience Section - Bootstrap Mobile Card Styling */
+
+/* Mobile styles - Bootstrap card customization */
+@media (max-width: 991.98px) {
+  /* Make cards full width on mobile */
+  .ftco-project .col-12 {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  /* Bootstrap card customization for mobile */
+  .card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .card-img-top {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .card-body {
+    padding: 18px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .card-title a {
+    color: #333 !important;
+  }
+  
+  .card-title a:hover {
+    color: #ffbd39 !important;
+  }
+  
+  .card-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+  .ftco-project .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .ftco-project .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  
+  .card-img-top {
+    height: 200px !important;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 14px;
+  }
+  
+  .card-text {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ftco-project .col-12 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card-img-top {
+    height: 180px !important;
+  }
+  
+  .card-body {
+    padding: 12px;
+  }
+  
+  .card-title {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  
+  .card-text {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+}
 
 .aside-stretch {
   background: #ffce6c; }
@@ -9671,6 +9850,178 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+/* ===== MOBILE RESPONSIVENESS IMPROVEMENTS ===== */
+
+/* Improve navbar collapse on mobile */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #000000;
+    border-top: 1px solid #333;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .navbar-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .nav-link {
+    padding: 12px 0 !important;
+    font-size: 15px;
+  }
+  
+  /* Better mobile menu toggle button */
+  .navbar-toggler {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 189, 57, 0.25);
+  }
+}
+
+/* Improve font sizes on mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  .slider-text h1 {
+    font-size: 24px;
+  }
+  
+  .slider-text h2 {
+    font-size: 18px;
+  }
+  
+  /* Better button sizing on mobile */
+  .btn {
+    padding: 10px 20px !important;
+    font-size: 14px;
+  }
+  
+  /* Improve hero section on mobile */
+  .one-forth {
+    padding: 20px 15px;
+  }
+  
+  .text {
+    padding: 15px;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .ftco-navbar-light {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .slider-text h1 {
+    font-size: 20px;
+  }
+  
+  .slider-text h2 {
+    font-size: 16px;
+  }
+  
+  .subheading {
+    font-size: 14px;
+  }
+  
+  /* Stack columns on small screens */
+  .col-md-6, .col-md-4, .col-lg-3 {
+    margin-bottom: 20px;
+  }
+  
+  /* Better spacing for contact info */
+  .contact-info {
+    flex-direction: column;
+  }
+  
+  /* Improve skill boxes on mobile */
+  .skill-box {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  /* Better project card spacing */
+  .project {
+    margin-bottom: 20px;
+  }
+  
+  /* Navbar brand sizing */
+  .navbar-brand {
+    font-size: 18px;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* Ensure nav items stack properly */
+  .navbar-nav {
+    flex-direction: column;
+  }
+  
+  .nav-item {
+    margin-bottom: 5px;
+  }
+}
+
+/* Ensure proper text sizing and spacing */
+body {
+  line-height: 1.6;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 991.98px) {
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  li {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  a, button, .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
 
 @keyframes loader-dash {
   0% {

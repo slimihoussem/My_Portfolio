@@ -76,6 +76,12 @@
 	    }, 500, function() {
 	    	// window.location.hash = href;
 	    });
+	    
+	    // Close mobile menu after clicking a link
+	    if (window.innerWidth <= 991) {
+	    	$('.js-fh5co-nav-toggle').removeClass('active');
+	    	$('#ftco-nav').collapse('hide');
+	    }
 		});
 
 	};
