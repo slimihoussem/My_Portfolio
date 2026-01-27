@@ -9343,7 +9343,39 @@ textarea.form-control {
     font-weight: 400;
     color: #000000; }
 
-.ftco-footer-social li {
+/* Beautiful footer text styling */
+.footer-text {
+  line-height: 1.8;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-text a {
+  display: block;
+  text-align: center;
+}
+
+.ftco-footer .col-md-12 {
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .footer-text {
+    font-size: 13px;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-text {
+    font-size: 12px;
+    line-height: 2;
+    padding: 0 15px;
+  }
+}.ftco-footer-social li {
   list-style: none;
   margin: 0 10px 0 0;
   display: inline-block; }

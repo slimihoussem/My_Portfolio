@@ -191,22 +191,30 @@
 				$('.number').each(function(){
 					var $this = $(this),
 						num = $this.data('number');
-						console.log(num);
+					
 					$this.animateNumber(
 					  {
 					    number: num,
 					    numberStep: comma_separator_number_step
 					  }, 7000
 					);
-					
-					// Add + prefix after animation completes
-					setTimeout(function() {
-						if(num > 3) {
-							$this.text('+' + num);
-						}
-					}, 7000);
 				});
 				
+				// Mark section as animated to prevent re-triggering
+				$(this.element).addClass('ftco-animated');
+				
+				// Add + prefix after animation completes with longer delay
+				setTimeout(function() {
+					$('#section-counter .number').each(function(){
+						var $this = $(this);
+						var currentText = $this.text();
+						var num = $this.data('number');
+						
+						if(num && num > 3 && currentText.indexOf('+') === -1) {
+							$this.text('+' + currentText);
+						}
+					});
+				}, 8000);
 			}
 
 		} , { offset: '95%' } );
