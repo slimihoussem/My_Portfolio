@@ -198,6 +198,13 @@
 					    numberStep: comma_separator_number_step
 					  }, 7000
 					);
+					
+					// Add + prefix after animation completes
+					setTimeout(function() {
+						if(num > 3) {
+							$this.text('+' + num);
+						}
+					}, 7000);
 				});
 				
 			}

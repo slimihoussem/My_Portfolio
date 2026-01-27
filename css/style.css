@@ -9100,6 +9100,40 @@ h1, h2, h3, h4, h5,
   margin: 0 auto;
 }
 
+/* Center skills section on mobile */
+@media (max-width: 991.98px) {
+  #skills-section .col-md-4 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #skills-section .skill-box {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Center contact info on mobile */
+@media (max-width: 991.98px) {
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-info .col-md-6.col-lg-3 {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact-info .box {
+    width: 100%;
+  }
+}
+
 /* Experience Section - Bootstrap Mobile Card Styling */
 
 /* Mobile styles - Bootstrap card customization */
